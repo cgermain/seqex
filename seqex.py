@@ -1,7 +1,6 @@
 import re, os, sys
 
 ID_REGEX = ">(\S+)[^>]*"
-#ID_REGEX = r"/"
 OUTPUT_FILE = "output.txt"
 
 def main(id_filename, sequence_filename):
