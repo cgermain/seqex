@@ -16,4 +16,4 @@ if __name__ == "__main__":
 	if len(sys.argv) == 3:
 		main(sys.argv[1], sys.argv[2])
 	else:
-		print "Usage: python extract_sequences.py id_file sequence_file"
+		print "Usage: python seqex.py id_file sequence_file"
