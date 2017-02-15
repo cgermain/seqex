@@ -7,9 +7,9 @@ NO_DOT_ID_REGEX = ">(\S+)[^>]*"
 DOT_ID_REGEX = ">(\S[^.]+)[^>]*"
 
 parser = argparse.ArgumentParser(description="Seqeuence extractor for FASTA files.")
-parser.add_argument('-d', action="store_true", dest="parse_dot", default=False, help="Indicate that the FASTA file has dots in in the ID. Example: ENSRNOP00000049172.4")
+parser.add_argument('-d', action="store_true", dest="parse_dot", default=False, help="Indicate that the FASTA file has dots in the ID. Example: ENSRNOP00000049172.4")
 parser.add_argument('id_filename', action="store", help="Path to a plaintext file of the IDs with one on each line.")
-parser.add_argument('sequence_filename', action="store", help="Path to a FASTA file that contains the IDs you would like to separate out.")
+parser.add_argument('sequence_filename', action="store", help="Path to a FASTA file that contains the sequences with corresponding IDs you want to extract.")
 
 def make_output_filename(filename):
 	path = os.path.abspath(filename)
