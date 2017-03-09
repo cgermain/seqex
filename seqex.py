@@ -33,17 +33,20 @@ def main():
 		id_list = [line.strip() for line in id_file]
 		regex = re.compile(DOT_ID_REGEX) if arguments.parse_dot else re.compile(NO_DOT_ID_REGEX)
 		sequence_count = 0
-
+		missing_count = 0
 		for sequence in regex.finditer(sequences):
 			if sequence.group(1) in id_list:
 				output_file.write(sequence.group())
 				sequence_count += 1
+			else:
+				missing_count += 1
 
 		if sequence_count == 0:
 			print "** Check that arguments were ordered correctly: python seqex.py ID_FILE SEQUENCE_FILE **"
 			print "** FASTA file might have a dots in the ID.  Run again w/ the -d flag. **"
 
 		print "Sequences extracted: " + str(sequence_count)
+		print "Unextracted: " + str(missing_count)
 		print "Extracted file: " + output_filename
 
 if __name__ == "__main__":
